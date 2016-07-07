@@ -8,10 +8,11 @@
         var t = window.performance.timing,
           interactive = t.domInteractive - t.domLoading,
           dcl = t.domContentLoadedEventStart - t.domLoading, complete = t.domComplete - t.domLoading , 
-          dns = t.domainLookupEnd - t.domainLookupStart ;
+          dns = t.domainLookupEnd - t.domainLookupStart ,  tcp = t.connectEnd - t.connectStart ,
+          ttfb = t.responseStart - t.navigationStart;
           var stats = document.createElement('p');
         stats.textContent = 'interactive: ' + interactive + 'ms, ' +
-            'Document complete: ' + dcl + 'ms, complete: ' + complete + 'ms , dns :'+dns + 'ms';
+            'Document complete: ' + dcl + 'ms, complete: ' + complete + 'ms , dns :'+dns + 'ms , tcp: '+ tcp+ 'ms , ttfb: 'ms' ;
         document.body.appendChild(stats);
       }
     </script>
