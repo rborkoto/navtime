@@ -24,6 +24,7 @@
       ttfb = t.responseStart - t.navigationStart;
           var stats = document.createElement('p');
         stats.textContext = +pageloadtime+ ','+dns+','+tcp+','+ttfb;
+        document.body.appendChild(stats);
       }
     </script>
      
