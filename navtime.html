@@ -22,8 +22,8 @@
      dns = t.domainLookupEnd - t.domainLookupStart,
       tcp = t.connectEnd - t.connectStart,
       ttfb = t.responseStart - t.navigationStart;
-          var stat = document.createElement('q');
-        stat.textContext = +pageloadtime+ ','+dns+','+tcp+','+ttfb;
+          var stats = document.createElement('p');
+        stats.textContext = +pageloadtime+ ','+dns+','+tcp+','+ttfb;
       }
     </script>
      
