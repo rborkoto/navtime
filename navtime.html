@@ -7,36 +7,23 @@
       function measureCRP() {
         var t = window.performance.timing,
           interactive = t.domInteractive - t.domLoading,
-          dcl = t.domContentLoadedEventStart - t.domLoading, complete = t.domComplete - t.domLoading , 
-          pageLoadTime = t.loadEventEnd - t.navigationStart ;
+          dcl = t.domContentLoadedEventStart - t.domLoading, complete = t.domComplete - t.domLoading ;
           var stats = document.createElement('p');
         stats.textContent = 'interactive: ' + interactive + 'ms, ' +
-            'Document complete: ' + dcl + 'ms, complete: ' + complete + 'ms, pageLoadTime :' +pageLoadTime + 'ms';
+            'Document complete: ' + dcl + 'ms, complete: ' + complete + 'ms';
         document.body.appendChild(stats);
       }
     </script>
     
     <script>
       function stdperfstats() {
-        var s = performance.timing, 
-        navigationStart = s.navigationStart , unloadEventStart = s.unloadEventStart , 
-          unloadEventEnd = s.unloadEventEnd , unloadEventEnd = s.unloadEventEnd , redirectStart = s.redirectStart ,
-          redirectEnd = s.redirectEnd , fetchStart = s.fetchStart , domainLookupStart = s.domainLookupStart , 
-          domainLookupEnd = s.domainLookupEnd , connectStart = s.connectStart , connectEnd = s.connectEnd , connectEnd = s.connectEnd , 
-          secureConnectionStart = s.secureConnectionStart , requestStart = s.requestStart , responseStart = s.responseStart ,
-          responseEnd = s.responseEnd , domLoading = s.domLoading , domInteractive = s.domInteractive , 
-          domContentLoadedEventStart = s.domContentLoadedEventStart , domContentLoadedEventEnd = s.domContentLoadedEventEnd , 
-          domComplete = s.domComplete , loadEventStart = s.loadEventStart , loadEventEnd = s.loadEventEnd;
+        var t = performance.timing,
+      pageloadtime = t.loadEventStart - t.navigationStart,
+     dns = t.domainLookupEnd - t.domainLookupStart,
+      tcp = t.connectEnd - t.connectStart,
+      ttfb = t.responseStart - t.navigationStart;
           var stat = document.createElement('q');
-        stat.textContext = 'navigationStart: ' + navigationStart+ 'unloadEventStart:'  + unloadEventStart+ 
-          'unloadEventEnd: ' + unloadEventEnd+ 'unloadEventEnd:'  + unloadEventEnd+ 'redirectStart:'  + redirectStart +
-          'redirectEnd:' + redirectEnd+ 'fetchStart:' + fetchStart+ 'domainLookupStart:' + domainLookupStart+ 
-          'domainLookupEnd:'  + domainLookupEnd+ 'connectStart:' + connectStart+ 'connectEnd:' + connectEnd+ 'connectEnd:'+ connectEnd+ 
-          'secureConnectionStart:' + secureConnectionStart+ 'requestStart:'  + requestStart+ 'responseStart:' + responseStart +
-          'responseEnd:' + responseEnd+ 'domLoading:' + domLoading+ 'domInteractive:'  + domInteractive+ 
-          'domContentLoadedEventStart:' + domContentLoadedEventStart+ 'domContentLoadedEventEnd:' + domContentLoadedEventEnd+ 
-          'domComplete:'+ domComplete+ 'loadEventStart:' + loadEventStart+'loadEventEnd:' + loadEventEnd + ;
-          document.body.appendChild(stat);
+        stat.textContext = +pageloadtime+ ','+dns+','+tcp+','+ttfb;
       }
     </script>
      
