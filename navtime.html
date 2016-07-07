@@ -8,7 +8,7 @@
         var t = window.performance.timing,
           interactive = t.domInteractive - t.domLoading,
           dcl = t.domContentLoadedEventStart - t.domLoading, complete = t.domComplete - t.domLoading , 
-          pageLoadTime = t.loadEventEnd - t.navigationStart;
+          pageLoadTime = t.loadEventEnd - t.navigationStart ;
           var stats = document.createElement('p');
         stats.textContent = 'interactive: ' + interactive + 'ms, ' +
             'Document complete: ' + dcl + 'ms, complete: ' + complete + 'ms, pageLoadTime :' +pageLoadTime + 'ms';
