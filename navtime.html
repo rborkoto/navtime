@@ -27,8 +27,8 @@
           responseEnd = s.responseEnd , domLoading = s.domLoading , domInteractive = s.domInteractive , 
           domContentLoadedEventStart = s.domContentLoadedEventStart , domContentLoadedEventEnd = s.domContentLoadedEventEnd , 
           domComplete = s.domComplete , loadEventStart = s.loadEventStart , loadEventEnd = s.loadEventEnd;
-          var stats = document.createElement('q');
-        stats.textContext = 'navigationStart: ' + navigationStart+ 'unloadEventStart:'  + unloadEventStart+ 
+          var stat = document.createElement('q');
+        stat.textContext = 'navigationStart: ' + navigationStart+ 'unloadEventStart:'  + unloadEventStart+ 
           'unloadEventEnd: ' + unloadEventEnd+ 'unloadEventEnd:'  + unloadEventEnd+ 'redirectStart:'  + redirectStart +
           'redirectEnd:' + redirectEnd+ 'fetchStart:' + fetchStart+ 'domainLookupStart:' + domainLookupStart+ 
           'domainLookupEnd:'  + domainLookupEnd+ 'connectStart:' + connectStart+ 'connectEnd:' + connectEnd+ 'connectEnd:'+ connectEnd+ 
@@ -36,7 +36,7 @@
           'responseEnd:' + responseEnd+ 'domLoading:' + domLoading+ 'domInteractive:'  + domInteractive+ 
           'domContentLoadedEventStart:' + domContentLoadedEventStart+ 'domContentLoadedEventEnd:' + domContentLoadedEventEnd+ 
           'domComplete:'+ domComplete+ 'loadEventStart:' + loadEventStart+'loadEventEnd:' + loadEventEnd ;
-          document.body.appendChild(stats);
+          document.body.appendChild(stat);
       }
     </script>
      
