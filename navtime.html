@@ -7,10 +7,11 @@
       function measureCRP() {
         var t = window.performance.timing,
           interactive = t.domInteractive - t.domLoading,
-          dcl = t.domContentLoadedEventStart - t.domLoading, complete = t.domComplete - t.domLoading;
+          dcl = t.domContentLoadedEventStart - t.domLoading, complete = t.domComplete - t.domLoading , 
+          pageLoadTime = t.loadEventEnd - t.navigationStart;
           var stats = document.createElement('p');
         stats.textContent = 'interactive: ' + interactive + 'ms, ' +
-            'dcl: ' + dcl + 'ms, complete: ' + complete + 'ms';
+            'Document complete: ' + dcl + 'ms, complete: ' + complete + 'ms,' 'pageLoadTime:' +pageLoadTime + 'ms';
         document.body.appendChild(stats);
       }
     </script>
@@ -27,15 +28,14 @@
           domContentLoadedEventStart = s.domContentLoadedEventStart , domContentLoadedEventEnd = s.domContentLoadedEventEnd , 
           domComplete = s.domComplete , loadEventStart = s.loadEventStart , loadEventEnd = s.loadEventEnd;
           var stats = document.createElement('q');
-        stats.textContext = navigationStart: ‘ + navigationStart’, unloadEventStart: ‘ + unloadEventStart’, 
-          unloadEventEnd: ‘ + unloadEventEnd’, unloadEventEnd: ‘ + unloadEventEnd’, redirectStart: ‘ + redirectStart ,
-          redirectEnd: ‘ + redirectEnd’, fetchStart: ‘ + fetchStart’, domainLookupStart: ‘ + domainLookupStart’, 
-          domainLookupEnd: ‘ + domainLookupEnd’, connectStart: ‘ + connectStart’, connectEnd: ‘ + connectEnd’, connectEnd: ‘ + connectEnd’, 
-          secureConnectionStart: ‘ + secureConnectionStart’, requestStart: ‘ + requestStart’, responseStart: ‘ + responseStart ,
-          responseEnd: ‘ + responseEnd’, domLoading: ‘ + domLoading’, domInteractive: ‘ + domInteractive’, 
-          domContentLoadedEventStart: ‘ + domContentLoadedEventStart’, domContentLoadedEventEnd: ‘ + domContentLoadedEventEnd’, 
-          domComplete: ‘ + domComplete’, loadEventStart: ‘ + loadEventStart’, loadEventEnd: ‘ + loadEventEnd' ;
-          
+        stats.textContext = 'navigationStart: ' + navigationStart, 'unloadEventStart: ‘ + unloadEventStart, 
+          'unloadEventEnd: ' + unloadEventEnd, 'unloadEventEnd:'  + unloadEventEnd, 'redirectStart:'  + redirectStart ,
+          'redirectEnd:' + redirectEnd, 'fetchStart:' + fetchStart, 'domainLookupStart:' + domainLookupStart, 
+          'domainLookupEnd:'  + domainLookupEnd, 'connectStart:' + connectStart, 'connectEnd:' + connectEnd, 'connectEnd:'+ connectEnd, 
+          'secureConnectionStart:' + secureConnectionStart, 'requestStart:'  + requestStart, 'responseStart:' + responseStart ,
+          'responseEnd:' + responseEnd, 'domLoading:' + domLoading, 'domInteractive:'  + domInteractive, 
+          'domContentLoadedEventStart:' + domContentLoadedEventStart, 'domContentLoadedEventEnd:' + domContentLoadedEventEnd, 
+          'domComplete:'+ domComplete, 'loadEventStart:' + loadEventStart,'loadEventEnd:' + loadEventEnd ;
           document.body.appendChild(stats);
       }
     </script>
