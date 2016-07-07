@@ -7,10 +7,11 @@
       function measureCRP() {
         var t = window.performance.timing,
           interactive = t.domInteractive - t.domLoading,
-          dcl = t.domContentLoadedEventStart - t.domLoading, complete = t.domComplete - t.domLoading ;
+          dcl = t.domContentLoadedEventStart - t.domLoading, complete = t.domComplete - t.domLoading , 
+          dns = t.domainLookupEnd - t.domainLookupStart ;
           var stats = document.createElement('p');
         stats.textContent = 'interactive: ' + interactive + 'ms, ' +
-            'Document complete: ' + dcl + 'ms, complete: ' + complete + 'ms';
+            'Document complete: ' + dcl + 'ms, complete: ' + complete + 'ms , dns :'+dns + 'ms';
         document.body.appendChild(stats);
       }
     </script>
