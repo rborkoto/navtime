@@ -16,19 +16,7 @@
         document.body.appendChild(stats);
       }
     </script>
-    
-    <script>
-      function stdperfstats() {
-        var t = performance.timing,
-      pageloadtime = t.loadEventStart - t.navigationStart,
-     dns = t.domainLookupEnd - t.domainLookupStart,
-      tcp = t.connectEnd - t.connectStart,
-      ttfb = t.responseStart - t.navigationStart;
-          var stats = document.createElement('p');
-        stats.textContext = +pageloadtime+ ','+dns+','+tcp+','+ttfb;
-        document.body.appendChild(stats);
-      }
-    </script>
+
      
   </head>
   <body onload="measureperf()">
