@@ -18,7 +18,7 @@
     
     <script>
       function stdperfstats() {
-        var s = window.performance.timing, 
+        var s = performance.timing, 
         navigationStart = s.navigationStart , unloadEventStart = s.unloadEventStart , 
           unloadEventEnd = s.unloadEventEnd , unloadEventEnd = s.unloadEventEnd , redirectStart = s.redirectStart ,
           redirectEnd = s.redirectEnd , fetchStart = s.fetchStart , domainLookupStart = s.domainLookupStart , 
