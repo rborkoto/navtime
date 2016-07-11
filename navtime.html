@@ -12,7 +12,7 @@
           ttfb = t.responseStart - t.navigationStart;
           var stats = document.createElement('p');
         stats.textContent = 'interactive: ' + interactive + 'ms, ' +
-            'Document complete: ' + dcl + 'ms, complete: ' + complete + 'ms , dns :'+dns + 'ms , tcp: '+ tcp+ 'ms , ttfb:' +ttfb+ 'ms' ;
+            'DOM content loaded: ' + dcl + 'ms, complete: ' + complete + 'ms , dns :'+dns + 'ms , tcp: '+ tcp+ 'ms , ttfb:' +ttfb+ 'ms' ;
         document.body.appendChild(stats);
       }
     </script>
