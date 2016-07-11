@@ -12,8 +12,8 @@
           ttfb = t.responseStart - t.navigationStart , fload = t.loadEventEnd - t.navigationStart ;
           var stats = document.createElement('p');
         stats.textContent = 'interactive: ' + interactive + 'ms, ' +
-            'DOM content loaded: ' + dcl + 'ms, DOM complete: ' + complete + 'ms , dns :'+dns + 'ms , tcp: '+ tcp+ 'ms , ttfb:' +ttfb+ 'ms ,
-            Fully loaded : ' + fload+ 'ms';
+            'DOM content loaded: ' + dcl + 'ms, DOM complete: ' + complete + 'ms , dns :'+dns + 'ms , tcp: '+ tcp+ 'ms , ttfb:' +ttfb+ 
+            'ms , Fully loaded : ' + fload+ 'ms';
         document.body.appendChild(stats);
       }
     </script>
