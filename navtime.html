@@ -9,10 +9,11 @@
           interactive = t.domInteractive - t.domLoading,
           dcl = t.domContentLoadedEventStart - t.domLoading, complete = t.domComplete - t.domLoading , 
           dns = t.domainLookupEnd - t.domainLookupStart ,  tcp = t.connectEnd - t.connectStart ,
-          ttfb = t.responseStart - t.navigationStart;
+          ttfb = t.responseStart - t.navigationStart , fload = t.loadEventEnd - t.navigationStart ;
           var stats = document.createElement('p');
         stats.textContent = 'interactive: ' + interactive + 'ms, ' +
-            'DOM content loaded: ' + dcl + 'ms, complete: ' + complete + 'ms , dns :'+dns + 'ms , tcp: '+ tcp+ 'ms , ttfb:' +ttfb+ 'ms' ;
+            'DOM content loaded: ' + dcl + 'ms, DOM complete: ' + complete + 'ms , dns :'+dns + 'ms , tcp: '+ tcp+ 'ms , ttfb:' +ttfb+ 'ms ,
+            Fully loaded : ' + fload+ 'ms';
         document.body.appendChild(stats);
       }
     </script>
