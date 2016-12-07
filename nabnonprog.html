@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Nav Timings</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+    <script>
+      function measureperf() {
+        var t = window.performance.timing,
+          interactive = t.domInteractive - t.domLoading,
+          dcl = t.domContentLoadedEventStart - t.domLoading, complete = t.domComplete - t.domLoading , 
+          dns = t.domainLookupEnd - t.domainLookupStart ,  tcp = t.connectEnd - t.connectStart ,
+          ttfb = t.responseStart - t.navigationStart ;
+          var stats = document.createElement('p');
+        stats.textContent ='ttfb :'+ttfb+ 'ms , interactive: ' + interactive + 'ms, ' +
+            'DOM content loaded: ' + dcl + 'ms, DOM complete: ' + complete + 'ms , dns :'+dns + 'ms , tcp: '+ tcp+ 'ms';
+        document.body.appendChild(stats);
+      }
+    </script>
+
+     
+  </head>
+  
+  <body onload="measureperf()">
+    <p>The <span>HERO Image</span> non-progressive!</p>
+ <!--   <img src="witcher-photo.jpg" height="480" width="720">
+    <img src="witcher-party.jpg" height="480" width="720"> -->
+    <img src="nab1.jpg">                    
+     <p> The remaining standard performance stats </p>
+  </body>
+</html>
